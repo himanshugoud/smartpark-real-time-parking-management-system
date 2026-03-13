@@ -31,18 +31,6 @@ SmartPark is a **web-based smart parking management system** designed to monitor
 
 ![Home](screenshots/home.png)
 
-### Live Parking Map
-
-![Parking Map](screenshots/parking-map.png)
-
-### Booking System
-
-![Booking](screenshots/booking.png)
-
-### Dashboard
-
-![Dashboard](screenshots/dashboard.png)
-
 ---
 
 ## System Architecture
@@ -122,7 +110,7 @@ User → View Parking Availability → Select Parking Slot → Enter Vehicle Det
 Clone the repository
 
 ```
-git clone https://github.com/yourusername/smartpark-real-time-parking-management-system.git
+git clone https://github.com/himanshugoud/smartpark-real-time-parking-management-system.git
 ```
 
 Open the project directory
@@ -156,12 +144,3 @@ demo-video.mp4
 
 ---
 
-## Author
-
-Himanshu Goud
-
----
-
-## License
-
-This project is developed for **educational and academic purposes**.
