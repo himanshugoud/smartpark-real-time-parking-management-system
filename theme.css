@@ -1,0 +1,783 @@
+/* theme.css */
+/* Advanced Theme System for SmartPark - Updated for Navbar Toggle */
+
+/* ========================
+   CSS Custom Properties (Themes)
+   ======================== */
+
+:root {
+  /* Base theme variables (Light Theme) */
+  --primary: #4361ee;
+  --primary-dark: #3a56d4;
+  --primary-light: #4cc9f0;
+  --secondary: #7209b7;
+  --success: #4ade80;
+  --success-dark: #22c55e;
+  --warning: #f59e0b;
+  --danger: #ef4444;
+  --danger-dark: #dc2626;
+  --info: #3b82f6;
+  --light: #f8f9fa;
+  --dark: #1f2937;
+  
+  /* Gray scale */
+  --gray-50: #f9fafb;
+  --gray-100: #f3f4f6;
+  --gray-200: #e5e7eb;
+  --gray-300: #d1d5db;
+  --gray-400: #9ca3af;
+  --gray-500: #6b7280;
+  --gray-600: #4b5563;
+  --gray-700: #374151;
+  --gray-800: #1f2937;
+  --gray-900: #111827;
+  
+  /* Gradients */
+  --gradient-primary: linear-gradient(135deg, #4361ee 0%, #3a0ca3 100%);
+  --gradient-secondary: linear-gradient(135deg, #7209b7 0%, #3a0ca3 100%);
+  --gradient-success: linear-gradient(135deg, #4ade80 0%, #16a34a 100%);
+  --gradient-warning: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+  --gradient-danger: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+  
+  /* Backgrounds */
+  --bg-primary: white;
+  --bg-secondary: #f8f9fa;
+  --bg-tertiary: #e9ecef;
+  --bg-card: white;
+  --bg-modal: white;
+  --bg-navbar: rgba(255, 255, 255, 0.95);
+  
+  /* Text colors */
+  --text-primary: #1f2937;
+  --text-secondary: #4b5563;
+  --text-tertiary: #6b7280;
+  --text-muted: #9ca3af;
+  
+  /* Borders */
+  --border-color: #e5e7eb;
+  --border-color-dark: #d1d5db;
+  
+  /* Shadows */
+  --shadow-color: rgba(0, 0, 0, 0.1);
+  --shadow-sm: 0 1px 2px 0 var(--shadow-color);
+  --shadow: 0 4px 6px -1px var(--shadow-color), 0 2px 4px -2px var(--shadow-color);
+  --shadow-md: 0 10px 15px -3px var(--shadow-color), 0 4px 6px -4px var(--shadow-color);
+  --shadow-lg: 0 20px 25px -5px var(--shadow-color), 0 8px 10px -6px var(--shadow-color);
+  --shadow-xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  
+  /* Effects */
+  --glass: rgba(255, 255, 255, 0.1);
+  --glass-border: rgba(255, 255, 255, 0.2);
+  --glass-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  
+  /* Typography */
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-dyslexia: 'OpenDyslexic', 'Comic Sans MS', 'Arial', sans-serif;
+  
+  /* Theme-specific */
+  --theme-accent: #4361ee;
+  --theme-toggle-bg: #f3f4f6;
+  --theme-toggle-border: #d1d5db;
+  
+  /* Animation */
+  --transition: all 0.2s ease-in-out;
+  --transition-slow: all 0.3s ease-in-out;
+  
+  /* Spacing */
+  --radius-sm: 0.375rem;
+  --radius: 0.5rem;
+  --radius-md: 0.75rem;
+  --radius-lg: 1rem;
+  --radius-xl: 1.5rem;
+  --radius-full: 9999px;
+}
+
+/* ========================
+   Dark Theme
+   ======================== */
+
+[data-theme="dark"] {
+  --primary: #60a5fa;
+  --primary-dark: #3b82f6;
+  --primary-light: #93c5fd;
+  --secondary: #a855f7;
+  --success: #4ade80;
+  --warning: #fbbf24;
+  --danger: #f87171;
+  --info: #60a5fa;
+  
+  --gray-50: #111827;
+  --gray-100: #1f2937;
+  --gray-200: #374151;
+  --gray-300: #4b5563;
+  --gray-400: #6b7280;
+  --gray-500: #9ca3af;
+  --gray-600: #d1d5db;
+  --gray-700: #e5e7eb;
+  --gray-800: #f3f4f6;
+  --gray-900: #f9fafb;
+  
+  --gradient-primary: linear-gradient(135deg, #60a5fa 0%, #3b82f6 100%);
+  --gradient-secondary: linear-gradient(135deg, #a855f7 0%, #7c3aed 100%);
+  
+  --bg-primary: #111827;
+  --bg-secondary: #1f2937;
+  --bg-tertiary: #374151;
+  --bg-card: #1f2937;
+  --bg-modal: #1f2937;
+  --bg-navbar: rgba(17, 24, 39, 0.95);
+  
+  --text-primary: #f9fafb;
+  --text-secondary: #e5e7eb;
+  --text-tertiary: #d1d5db;
+  --text-muted: #9ca3af;
+  
+  --border-color: #374151;
+  --border-color-dark: #4b5563;
+  
+  --shadow-color: rgba(0, 0, 0, 0.3);
+  --glass: rgba(31, 41, 55, 0.5);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  
+  --theme-accent: #60a5fa;
+  --theme-toggle-bg: #374151;
+  --theme-toggle-border: #4b5563;
+}
+
+/* ========================
+   High Contrast Theme
+   ======================== */
+
+[data-theme="high-contrast"] {
+  --primary: #0000ff;
+  --primary-dark: #0000cc;
+  --primary-light: #6666ff;
+  --secondary: #800080;
+  --success: #008000;
+  --warning: #ffa500;
+  --danger: #ff0000;
+  --info: #0000ff;
+  
+  --gray-50: #ffffff;
+  --gray-100: #f0f0f0;
+  --gray-200: #d0d0d0;
+  --gray-300: #a0a0a0;
+  --gray-400: #707070;
+  --gray-500: #505050;
+  --gray-600: #303030;
+  --gray-700: #202020;
+  --gray-800: #101010;
+  --gray-900: #000000;
+  
+  --gradient-primary: linear-gradient(135deg, #0000ff 0%, #0000cc 100%);
+  --gradient-secondary: linear-gradient(135deg, #800080 0%, #4b0082 100%);
+  
+  --bg-primary: #ffffff;
+  --bg-secondary: #f0f0f0;
+  --bg-tertiary: #e0e0e0;
+  --bg-card: #ffffff;
+  --bg-modal: #ffffff;
+  --bg-navbar: rgba(255, 255, 255, 0.98);
+  
+  --text-primary: #000000;
+  --text-secondary: #202020;
+  --text-tertiary: #404040;
+  --text-muted: #606060;
+  
+  --border-color: #000000;
+  --border-color-dark: #000000;
+  
+  --shadow-color: rgba(0, 0, 0, 0.5);
+  
+  --theme-accent: #0000ff;
+  --theme-toggle-bg: #f0f0f0;
+  --theme-toggle-border: #000000;
+  
+  /* High contrast specific */
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+/* ========================
+   Dyslexia-Friendly Theme
+   ======================== */
+
+[data-theme="dyslexia"] {
+  --font-sans: 'OpenDyslexic', 'Comic Sans MS', 'Arial', sans-serif;
+  
+  --primary: #4361ee;
+  --secondary: #7209b7;
+  --success: #4ade80;
+  --warning: #f59e0b;
+  --danger: #ef4444;
+  
+  --bg-primary: #fffff0;
+  --bg-secondary: #f8f8e0;
+  --bg-tertiary: #f0f0d0;
+  --bg-card: #fffff8;
+  --bg-modal: #fffff8;
+  --bg-navbar: rgba(255, 255, 240, 0.95);
+  
+  --text-primary: #2d3748;
+  --text-secondary: #4a5568;
+  --text-tertiary: #718096;
+  
+  --border-color: #e2e8f0;
+  --border-color-dark: #cbd5e0;
+  
+  --theme-accent: #4361ee;
+  --theme-toggle-bg: #f8f8e0;
+  --theme-toggle-border: #e2e8f0;
+  
+  /* Dyslexia specific */
+  letter-spacing: 0.1em;
+  line-height: 1.8;
+}
+
+/* ========================
+   Enterprise Themes (Brand Colors)
+   ======================== */
+
+[data-theme="enterprise-blue"] {
+  --primary: #0066cc;
+  --primary-dark: #0052a3;
+  --primary-light: #3385d6;
+  --secondary: #003366;
+  --success: #00a86b;
+  --warning: #ff9900;
+  --danger: #cc3300;
+  
+  --gradient-primary: linear-gradient(135deg, #0066cc 0%, #003366 100%);
+  --gradient-secondary: linear-gradient(135deg, #003366 0%, #001a33 100%);
+  
+  --theme-accent: #0066cc;
+}
+
+[data-theme="enterprise-green"] {
+  --primary: #2e7d32;
+  --primary-dark: #1b5e20;
+  --primary-light: #4caf50;
+  --secondary: #1b5e20;
+  --success: #2e7d32;
+  --warning: #ff9800;
+  --danger: #d32f2f;
+  
+  --gradient-primary: linear-gradient(135deg, #2e7d32 0%, #1b5e20 100%);
+  --gradient-secondary: linear-gradient(135deg, #1b5e20 0%, #0d3c0f 100%);
+  
+  --theme-accent: #2e7d32;
+}
+
+[data-theme="enterprise-purple"] {
+  --primary: #673ab7;
+  --primary-dark: #512da8;
+  --primary-light: #9575cd;
+  --secondary: #311b92;
+  --success: #009688;
+  --warning: #ff5722;
+  --danger: #e91e63;
+  
+  --gradient-primary: linear-gradient(135deg, #673ab7 0%, #311b92 100%);
+  --gradient-secondary: linear-gradient(135deg, #311b92 0%, #1a0d4d 100%);
+  
+  --theme-accent: #673ab7;
+}
+
+[data-theme="enterprise-red"] {
+  --primary: #d32f2f;
+  --primary-dark: #b71c1c;
+  --primary-light: #ef5350;
+  --secondary: #b71c1c;
+  --success: #388e3c;
+  --warning: #f57c00;
+  --danger: #d32f2f;
+  
+  --gradient-primary: linear-gradient(135deg, #d32f2f 0%, #b71c1c 100%);
+  --gradient-secondary: linear-gradient(135deg, #b71c1c 0%, #8b0000 100%);
+  
+  --theme-accent: #d32f2f;
+}
+
+/* ========================
+   Seasonal Themes
+   ======================== */
+
+[data-theme="christmas"] {
+  --primary: #d32f2f;
+  --primary-dark: #b71c1c;
+  --primary-light: #ef5350;
+  --secondary: #2e7d32;
+  --success: #2e7d32;
+  --warning: #ff9800;
+  --danger: #d32f2f;
+  --info: #2196f3;
+  
+  --gradient-primary: linear-gradient(135deg, #d32f2f 0%, #2e7d32 100%);
+  --gradient-secondary: linear-gradient(135deg, #2e7d32 0%, #1b5e20 100%);
+  
+  --bg-primary: #fff5f5;
+  --bg-secondary: #f8f0f0;
+  --bg-tertiary: #f0e6e6;
+  
+  --theme-accent: #d32f2f;
+}
+
+[data-theme="halloween"] {
+  --primary: #ff9800;
+  --primary-dark: #f57c00;
+  --primary-light: #ffb74d;
+  --secondary: #673ab7;
+  --success: #4caf50;
+  --warning: #ff9800;
+  --danger: #f44336;
+  
+  --gradient-primary: linear-gradient(135deg, #ff9800 0%, #673ab7 100%);
+  --gradient-secondary: linear-gradient(135deg, #673ab7 0%, #311b92 100%);
+  
+  --bg-primary: #1a1a1a;
+  --bg-secondary: #2d2d2d;
+  --bg-tertiary: #3d3d3d;
+  --bg-card: #2d2d2d;
+  --bg-modal: #2d2d2d;
+  --bg-navbar: rgba(45, 45, 45, 0.95);
+  
+  --text-primary: #ff9800;
+  --text-secondary: #ffb74d;
+  --text-tertiary: #ffcc80;
+  
+  --theme-accent: #ff9800;
+}
+
+[data-theme="summer"] {
+  --primary: #2196f3;
+  --primary-dark: #1976d2;
+  --primary-light: #64b5f6;
+  --secondary: #ff9800;
+  --success: #4caf50;
+  --warning: #ff9800;
+  --danger: #f44336;
+  
+  --gradient-primary: linear-gradient(135deg, #2196f3 0%, #1976d2 100%);
+  --gradient-secondary: linear-gradient(135deg, #ff9800 0%, #ff5722 100%);
+  
+  --bg-primary: #e3f2fd;
+  --bg-secondary: #bbdefb;
+  --bg-tertiary: #90caf9;
+  
+  --theme-accent: #2196f3;
+}
+
+[data-theme="winter"] {
+  --primary: #29b6f6;
+  --primary-dark: #0288d1;
+  --primary-light: #4fc3f7;
+  --secondary: #e3f2fd;
+  --success: #26c6da;
+  --warning: #ffb74d;
+  --danger: #ef5350;
+  
+  --gradient-primary: linear-gradient(135deg, #29b6f6 0%, #0288d1 100%);
+  --gradient-secondary: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+  
+  --bg-primary: #e3f2fd;
+  --bg-secondary: #bbdefb;
+  --bg-tertiary: #90caf9;
+  
+  --theme-accent: #29b6f6;
+}
+
+/* ========================
+   Theme Transition
+   ======================== */
+
+body {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* ========================
+   Navbar Theme Toggle Button
+   ======================== */
+
+.theme-toggle-btn-navbar {
+  background: var(--theme-toggle-bg);
+  border: 2px solid var(--theme-toggle-border);
+  color: var(--text-primary);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  transition: var(--transition);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  padding: 0;
+  margin-right: 1rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.theme-toggle-btn-navbar:hover {
+  transform: scale(1.1);
+  box-shadow: var(--shadow);
+  border-color: var(--theme-accent);
+  color: var(--theme-accent);
+}
+
+.theme-toggle-btn-navbar.active {
+  background: var(--theme-accent);
+  color: white;
+  border-color: var(--theme-accent);
+}
+
+.theme-toggle-btn-navbar i {
+  transition: transform 0.3s ease;
+}
+
+.theme-toggle-btn-navbar:hover i {
+  transform: rotate(20deg);
+}
+
+/* Ensure navbar layout */
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* ========================
+   Theme Panel
+   ======================== */
+
+.theme-panel {
+  position: fixed;
+  top: 80px;
+  right: 20px;
+  background: var(--bg-card);
+  border-radius: var(--radius-lg);
+  padding: 1rem;
+  box-shadow: var(--shadow-xl);
+  border: 1px solid var(--border-color);
+  width: 300px;
+  max-height: 80vh;
+  overflow-y: auto;
+  display: none;
+  z-index: 9999;
+}
+
+.theme-panel.active {
+  display: block;
+  animation: slideUp 0.3s ease;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.theme-panel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.theme-panel-header h3 {
+  margin: 0;
+  font-size: 1rem;
+  color: var(--text-primary);
+}
+
+.close-theme-panel {
+  background: none;
+  border: none;
+  color: var(--text-tertiary);
+  cursor: pointer;
+  font-size: 1.25rem;
+  padding: 0.25rem;
+  line-height: 1;
+}
+
+.close-theme-panel:hover {
+  color: var(--text-primary);
+}
+
+/* Theme sections */
+.theme-section {
+  margin-bottom: 1.5rem;
+}
+
+.theme-section:last-child {
+  margin-bottom: 0;
+}
+
+.theme-section h4 {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  margin-bottom: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.theme-section h4 i {
+  color: var(--theme-accent);
+}
+
+/* Theme options grid */
+.theme-options {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.75rem;
+}
+
+.theme-option {
+  cursor: pointer;
+  position: relative;
+}
+
+.theme-option input {
+  display: none;
+}
+
+.theme-preview {
+  aspect-ratio: 1;
+  border-radius: var(--radius);
+  border: 2px solid var(--border-color);
+  overflow: hidden;
+  transition: var(--transition);
+  position: relative;
+}
+
+.theme-option input:checked + .theme-preview {
+  border-color: var(--theme-accent);
+  box-shadow: 0 0 0 2px var(--theme-accent);
+}
+
+.theme-option:hover .theme-preview {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow);
+}
+
+/* Preview colors */
+.theme-preview-color {
+  height: 100%;
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+}
+
+.theme-preview-color > div {
+  transition: transform 0.3s ease;
+}
+
+.theme-option:hover .theme-preview-color > div {
+  transform: scale(1.05);
+}
+
+/* Theme names */
+.theme-name {
+  display: block;
+  text-align: center;
+  font-size: 0.75rem;
+  margin-top: 0.5rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.theme-option input:checked ~ .theme-name {
+  color: var(--theme-accent);
+  font-weight: 600;
+}
+
+/* Auto theme indicator */
+.auto-theme-indicator {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #f3f4f6 0%, #1f2937 100%);
+  border: 2px solid var(--bg-card);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.5rem;
+  color: var(--text-primary);
+}
+
+/* ========================
+   Theme Loading Animation
+   ======================== */
+
+.theme-loading {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--bg-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease;
+}
+
+.theme-loading.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.theme-loading-spinner {
+  width: 50px;
+  height: 50px;
+  border: 3px solid var(--border-color);
+  border-top-color: var(--theme-accent);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ========================
+   Responsive Theme Panel
+   ======================== */
+
+@media (max-width: 768px) {
+  .theme-panel {
+    width: calc(100vw - 40px);
+    top: 70px;
+    right: 10px;
+  }
+  
+  .theme-options {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .theme-toggle-btn-navbar {
+    width: 36px;
+    height: 36px;
+    margin-right: 0.5rem;
+  }
+  
+  .nav-actions {
+    gap: 0.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .theme-panel {
+    width: calc(100vw - 20px);
+  }
+  
+  .theme-options {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ========================
+   Print Styles
+   ======================== */
+
+@media print {
+  .theme-toggle-btn-navbar {
+    display: none !important;
+  }
+  
+  .theme-panel {
+    display: none !important;
+  }
+  
+  [data-theme] {
+    --bg-primary: white !important;
+    --bg-card: white !important;
+    --text-primary: black !important;
+    --text-secondary: #333 !important;
+    --border-color: #ddd !important;
+  }
+}
+
+/* ========================
+   Accessibility Improvements
+   ======================== */
+
+[data-theme="high-contrast"] a,
+[data-theme="high-contrast"] button {
+  text-decoration: underline;
+}
+
+[data-theme="high-contrast"] .btn {
+  border-width: 2px;
+}
+
+[data-theme="dyslexia"] * {
+  font-weight: normal !important;
+}
+
+[data-theme="dyslexia"] h1,
+[data-theme="dyslexia"] h2,
+[data-theme="dyslexia"] h3,
+[data-theme="dyslexia"] h4,
+[data-theme="dyslexia"] h5,
+[data-theme="dyslexia"] h6 {
+  font-weight: bold !important;
+}
+
+/* Focus states for keyboard navigation */
+.theme-toggle-btn-navbar:focus,
+.theme-option:focus-within .theme-preview {
+  outline: 2px solid var(--theme-accent);
+  outline-offset: 2px;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .theme-toggle-btn-navbar,
+  .theme-preview,
+  .theme-loading {
+    transition: none !important;
+    animation: none !important;
+  }
+  
+  .theme-toggle-btn-navbar:hover {
+    transform: none !important;
+  }
+}
+
+/* ========================
+   Custom Scrollbar for Theme Panel
+   ======================== */
+
+.theme-panel::-webkit-scrollbar {
+  width: 8px;
+}
+
+.theme-panel::-webkit-scrollbar-track {
+  background: var(--bg-tertiary);
+  border-radius: var(--radius);
+}
+
+.theme-panel::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+  border-radius: var(--radius);
+}
+
+.theme-panel::-webkit-scrollbar-thumb:hover {
+  background: var(--text-tertiary);
+}
+

@@ -1,0 +1,2292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartPark - Intelligent Parking Solutions</title>
+    <!-- Main Styles -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <!-- ========================
+         THEME SYSTEM
+         ======================== -->
+    <link rel="stylesheet" href="theme.css">
+  <link rel="stylesheet" href="livechat.css">
+    <script src="theme.js" defer></script>
+    
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <div class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-parking"></i>
+                </div>
+                <h1>Smart<span>Park</span></h1>
+            </div>
+            
+            <div class="nav-menu" id="nav-menu">
+                <ul class="nav-list">
+                    <li class="nav-item"><a href="#home" class="nav-link active">Home</a></li>
+                    <li class="nav-item"><a href="#features" class="nav-link">Features</a></li>
+                    <li class="nav-item"><a href="#parking" class="nav-link">Live Parking</a></li>
+                    <li class="nav-item"><a href="#pricing" class="nav-link">Pricing</a></li>
+                    <li class="nav-item"><a href="#dashboard" class="nav-link">Dashboard</a></li>
+                    <li class="nav-item"><a href="#help" class="nav-link">Help</a></li>
+                    <li class="nav-item dropdown" id="account-dropdown">
+                        <a href="javascript:void(0)" class="nav-link dropdown-toggle">
+                            <i class="fas fa-user-circle"></i> Account
+                            <i class="fas fa-chevron-down"></i>
+                        </a>
+                        <div class="dropdown-menu">
+                            <div class="dropdown-header" id="user-info">
+                                <strong>Guest User</strong>
+                                <small>Please login</small>
+                            </div>
+                            <a href="#dashboard" class="dropdown-item">
+                                <i class="fas fa-tachometer-alt"></i> Dashboard
+                            </a>
+                            <a href="javascript:void(0)" class="dropdown-item" id="dropdown-login">
+                                <i class="fas fa-sign-in-alt"></i> Login
+                            </a>
+                            <a href="javascript:void(0)" class="dropdown-item" id="dropdown-signup">
+                                <i class="fas fa-user-plus"></i> Sign Up
+                            </a>
+                            <div class="dropdown-divider"></div>
+                            <a href="javascript:void(0)" class="dropdown-item" id="dropdown-logout" style="display: none;">
+                                <i class="fas fa-sign-out-alt"></i> Logout
+                            </a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="nav-actions">
+                <button class="btn btn-primary" id="book-now-btn">
+                    <i class="fas fa-calendar-check"></i> Book Now
+                </button>
+                <button class="nav-toggle" id="nav-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <div class="hero-badge">
+                        <i class="fas fa-bolt"></i>
+                        <span>Revolutionizing Urban Parking</span>
+                    </div>
+                    <h1 class="hero-title">
+                        Smart Parking
+                        <span class="gradient-text">Solutions</span>
+                        for Modern Cities
+                    </h1>
+                    <p class="hero-description">
+                        Experience seamless parking with real-time availability, automated booking,
+                        and contactless payments. Join thousands of satisfied users today.
+                    </p>
+                    <div class="hero-actions">
+                        <button class="btn btn-primary btn-lg" id="hero-book-btn">
+                            <i class="fas fa-map-marker-alt"></i> Find Parking Now
+                        </button>
+                        <button class="btn btn-outline btn-lg" id="watch-demo-btn">
+                            <i class="fas fa-play-circle"></i> Watch Demo
+                        </button>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="floating-card">
+                        <div class="parking-animation">
+                            <div class="parking-slot active">
+                                <i class="fas fa-car"></i>
+                                <span>A-01</span>
+                            </div>
+                            <div class="parking-slot booked">
+                                <i class="fas fa-car"></i>
+                                <span>A-02</span>
+                            </div>
+                            <div class="parking-slot available">
+                                <i class="fas fa-car"></i>
+                                <span>A-03</span>
+                            </div>
+                        </div>
+                        <div class="stats-bubble">
+                            <i class="fas fa-check-circle"></i>
+                            <span id="live-available-slots">85</span> Available Spots
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="hero-stats">
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-car"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3 class="stat-number" data-count="2500">0</h3>
+                        <p class="stat-label">Parking Slots</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3 class="stat-number" data-count="15000">0</h3>
+                        <p class="stat-label">Happy Users</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-city"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3 class="stat-number" data-count="25">0</h3>
+                        <p class="stat-label">Cities</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3 class="stat-number" data-count="99.5">0</h3>
+                        <p class="stat-label">% Uptime</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="features">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Why Choose SmartPark</h2>
+                <p class="section-subtitle">Experience the future of parking with our innovative features</p>
+            </div>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-search-location"></i>
+                    </div>
+                    <h3 class="feature-title">Real-Time Availability</h3>
+                    <p class="feature-description">
+                        View live parking availability across all floors with our interactive 3D map.
+                    </p>
+                    <a href="#parking" class="feature-link">
+                        Explore Map <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3 class="feature-title">Instant Booking</h3>
+                    <p class="feature-description">
+                        Reserve your spot in seconds with our streamlined booking process.
+                    </p>
+                    <a href="#parking" class="feature-link">
+                        Book Now <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3 class="feature-title">Mobile App</h3>
+                    <p class="feature-description">
+                        Manage everything from your smartphone with our feature-packed mobile app.
+                    </p>
+                    <a href="javascript:void(0)" class="feature-link" id="download-app-link">
+                        Download App <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3 class="feature-title">Secure Payments</h3>
+                    <p class="feature-description">
+                        Encrypted transactions and multiple payment options for your peace of mind.
+                    </p>
+                    <a href="#pricing" class="feature-link">
+                        View Plans <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Live Parking Status -->
+    <section class="live-parking" id="parking">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Live Parking Status</h2>
+                <p class="section-subtitle">Real-time availability across all floors</p>
+            </div>
+            
+            <div class="parking-status">
+                <div class="status-header">
+                    <div class="status-tags">
+                        <span class="status-tag available">
+                            <i class="fas fa-circle"></i> Available
+                        </span>
+                        <span class="status-tag booked">
+                            <i class="fas fa-circle"></i> Booked
+                        </span>
+                        <span class="status-tag occupied">
+                            <i class="fas fa-circle"></i> Occupied
+                        </span>
+                        <span class="status-tag reserved">
+                            <i class="fas fa-circle"></i> Reserved
+                        </span>
+                        <span class="status-tag handicap">
+                            <i class="fas fa-circle"></i> Handicap
+                        </span>
+                        <span class="status-tag electric">
+                            <i class="fas fa-circle"></i> EV Charging
+                        </span>
+                    </div>
+                    <div class="status-refresh">
+                        <button class="btn-refresh" id="refresh-parking">
+                            <i class="fas fa-sync-alt"></i> Refresh
+                        </button>
+                        <span class="last-update" id="last-update-time">Updated just now</span>
+                    </div>
+                </div>
+                
+                <div class="floors-container">
+                    <div class="floor-tabs">
+                        <button class="floor-tab active" data-floor="ground">
+                            <i class="fas fa-layer-group"></i> Ground Floor
+                        </button>
+                        <button class="floor-tab" data-floor="first">
+                            <i class="fas fa-layer-group"></i> First Floor
+                        </button>
+                        <button class="floor-tab" data-floor="second">
+                            <i class="fas fa-layer-group"></i> Second Floor
+                        </button>
+                    </div>
+                    
+                    <div class="floor-content">
+                        <div class="floor-map" id="floor-map">
+                            <!-- Parking map will be generated by JavaScript -->
+                        </div>
+                        <div class="floor-stats">
+                            <h3 class="stats-title">Floor Statistics</h3>
+                            <div class="stats-progress">
+                                <div class="progress-item">
+                                    <div class="progress-label">
+                                        <span>Availability</span>
+                                        <span class="progress-value" id="availability-percent">72%</span>
+                                    </div>
+                                    <div class="progress-bar">
+                                        <div class="progress-fill" id="availability-bar" style="width: 72%"></div>
+                                    </div>
+                                </div>
+                                <div class="progress-item">
+                                    <div class="progress-label">
+                                        <span>Peak Hours</span>
+                                        <span class="progress-value">9AM - 5PM</span>
+                                    </div>
+                                    <div class="progress-bar">
+                                        <div class="progress-fill" style="width: 65%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="stats-grid">
+                                <div class="stat-box">
+                                    <div class="stat-box-label">Total Slots</div>
+                                    <div class="stat-box-value" id="total-slots-count">120</div>
+                                </div>
+                                <div class="stat-box">
+                                    <div class="stat-box-label">Available</div>
+                                    <div class="stat-box-value" id="available-slots-count">86</div>
+                                </div>
+                                <div class="stat-box">
+                                    <div class="stat-box-label">Booked</div>
+                                    <div class="stat-box-value" id="booked-slots-count">24</div>
+                                </div>
+                                <div class="stat-box">
+                                    <div class="stat-box-label">EV Charging</div>
+                                    <div class="stat-box-value" id="ev-slots-count">8</div>
+                                </div>
+                            </div>
+                            <div class="selected-slot-info" id="selected-slot-info" style="display: none;">
+                                <h4>Selected Slot</h4>
+                                <p><strong>Slot:</strong> <span id="selected-slot-id">A-01</span></p>
+                                <p><strong>Status:</strong> <span id="selected-slot-status" class="status-available">Available</span></p>
+                                <p><strong>Price:</strong> <span id="selected-slot-price">$2.50/hr</span></p>
+                            </div>
+                            <button class="btn btn-primary btn-block" id="book-selected-btn" disabled>
+                                <i class="fas fa-calendar-alt"></i> Book Selected Slot
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="pricing" id="pricing">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Flexible Pricing Plans</h2>
+                <p class="section-subtitle">Choose the perfect plan for your parking needs</p>
+            </div>
+            
+            <div class="pricing-tabs">
+                <button class="pricing-tab active" data-period="hourly">Hourly</button>
+                <button class="pricing-tab" data-period="daily">Daily</button>
+                <button class="pricing-tab" data-period="monthly">Monthly</button>
+            </div>
+            
+            <div class="pricing-cards">
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3 class="pricing-title">Standard</h3>
+                        <div class="pricing-price">
+                            <span class="currency">$</span>
+                            <span class="amount" data-hourly="2.50" data-daily="20" data-monthly="180">2.50</span>
+                            <span class="period" data-hourly="/hour" data-daily="/day" data-monthly="/month">/hour</span>
+                        </div>
+                    </div>
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check"></i> First 30 minutes free</li>
+                        <li><i class="fas fa-check"></i> Maximum daily rate: $20</li>
+                        <li><i class="fas fa-check"></i> Available 24/7</li>
+                        <li><i class="fas fa-check"></i> Standard parking spots</li>
+                    </ul>
+                    <button class="btn btn-outline btn-block select-plan" data-plan="standard">
+                        Choose Plan
+                    </button>
+                </div>
+                
+                <div class="pricing-card featured">
+                    <div class="pricing-badge">Most Popular</div>
+                    <div class="pricing-header">
+                        <h3 class="pricing-title">Premium</h3>
+                        <div class="pricing-price">
+                            <span class="currency">$</span>
+                            <span class="amount" data-hourly="3.50" data-daily="25" data-monthly="250">3.50</span>
+                            <span class="period" data-hourly="/hour" data-daily="/day" data-monthly="/month">/hour</span>
+                        </div>
+                    </div>
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check"></i> Covered parking</li>
+                        <li><i class="fas fa-check"></i> Closer to exits</li>
+                        <li><i class="fas fa-check"></i> Maximum daily rate: $25</li>
+                        <li><i class="fas fa-check"></i> Priority support</li>
+                        <li><i class="fas fa-check"></i> Guaranteed availability</li>
+                    </ul>
+                    <button class="btn btn-primary btn-block select-plan" data-plan="premium">
+                        Choose Plan
+                    </button>
+                </div>
+                
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3 class="pricing-title">Business</h3>
+                        <div class="pricing-price">
+                            <span class="currency">$</span>
+                            <span class="amount" data-hourly="180" data-daily="15" data-monthly="300">180</span>
+                            <span class="period" data-hourly="/month" data-daily="/day" data-monthly="/month">/month</span>
+                        </div>
+                    </div>
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check"></i> Unlimited parking</li>
+                        <li><i class="fas fa-check"></i> Reserved spot</li>
+                        <li><i class="fas fa-check"></i> 24/7 access</li>
+                        <li><i class="fas fa-check"></i> Save up to 40%</li>
+                        <li><i class="fas fa-check"></i> EV charging included</li>
+                    </ul>
+                    <button class="btn btn-outline btn-block select-plan" data-plan="business">
+                        Choose Plan
+                    </button>
+                </div>
+            </div>
+            
+            <div class="timing-info">
+                <h3>Special Rates & Timing</h3>
+                <div class="timing-grid">
+                    <div class="timing-card">
+                        <i class="fas fa-clock"></i>
+                        <h4>Peak Hours</h4>
+                        <p>Monday - Friday</p>
+                        <p class="timing">9:00 AM - 5:00 PM</p>
+                        <p class="note">+20% surcharge applies</p>
+                    </div>
+                    <div class="timing-card">
+                        <i class="fas fa-moon"></i>
+                        <h4>Night Hours</h4>
+                        <p>8:00 PM - 6:00 AM</p>
+                        <p class="timing">Flat rate: $8 overnight</p>
+                        <p class="note">Limited security patrols</p>
+                    </div>
+                    <div class="timing-card">
+                        <i class="fas fa-calendar-week"></i>
+                        <h4>Weekend Special</h4>
+                        <p>Saturday - Sunday</p>
+                        <p class="timing">$12 all day</p>
+                        <p class="note">First come, first served</p>
+                    </div>
+                    <div class="timing-card">
+                        <i class="fas fa-hand-holding-usd"></i>
+                        <h4>Early Bird</h4>
+                        <p>Enter before 8:00 AM</p>
+                        <p class="timing">$15 for the whole day</p>
+                        <p class="note">Exit by 8:00 PM</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dashboard Section -->
+    <section class="dashboard" id="dashboard">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">User Dashboard</h2>
+                <p class="section-subtitle">Manage your parking activities and account</p>
+            </div>
+            
+            <div class="dashboard-content">
+                <div class="dashboard-sidebar">
+                    <div class="user-profile">
+                        <div class="profile-icon">
+                            <i class="fas fa-user-circle"></i>
+                        </div>
+                        <h3 id="dashboard-username">Guest User</h3>
+                        <p id="dashboard-email">Please login to access dashboard</p>
+                        <div class="profile-stats">
+                            <div class="profile-stat">
+                                <span class="stat-label">Bookings</span>
+                                <span class="stat-value" id="user-bookings-count">0</span>
+                            </div>
+                            <div class="profile-stat">
+                                <span class="stat-label">Points</span>
+                                <span class="stat-value" id="user-points">0</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <nav class="dashboard-nav">
+                        <button class="dashboard-nav-btn active" data-panel="overview">
+                            <i class="fas fa-chart-bar"></i> Overview
+                        </button>
+                        <button class="dashboard-nav-btn" data-panel="bookings">
+                            <i class="fas fa-calendar-alt"></i> My Bookings
+                        </button>
+                        <button class="dashboard-nav-btn" data-panel="payments">
+                            <i class="fas fa-credit-card"></i> Payments
+                        </button>
+                        <button class="dashboard-nav-btn" data-panel="settings">
+                            <i class="fas fa-cog"></i> Settings
+                        </button>
+                    </nav>
+                </div>
+                
+                <div class="dashboard-main">
+                    <!-- Overview Panel -->
+                    <div class="dashboard-panel active" id="overview-panel">
+                        <div class="panel-header">
+                            <h3>Parking Overview</h3>
+                            <button class="btn btn-outline btn-sm" id="refresh-dashboard">
+                                <i class="fas fa-sync-alt"></i> Refresh
+                            </button>
+                        </div>
+                        
+                        <div class="stats-grid">
+                            <div class="stat-box">
+                                <i class="fas fa-car"></i>
+                                <div>
+                                    <h4>Active Bookings</h4>
+                                    <p id="active-bookings-count">0</p>
+                                </div>
+                            </div>
+                            <div class="stat-box">
+                                <i class="fas fa-history"></i>
+                                <div>
+                                    <h4>Total Hours Parked</h4>
+                                    <p id="total-hours-parked">0</p>
+                                </div>
+                            </div>
+                            <div class="stat-box">
+                                <i class="fas fa-money-bill-wave"></i>
+                                <div>
+                                    <h4>Total Spent</h4>
+                                    <p id="total-amount-spent">$0.00</p>
+                                </div>
+                            </div>
+                            <div class="stat-box">
+                                <i class="fas fa-star"></i>
+                                <div>
+                                    <h4>Loyalty Points</h4>
+                                    <p id="loyalty-points-count">0</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="recent-activity">
+                            <h4>Recent Activity</h4>
+                            <div class="activity-list" id="recent-activity-list">
+                                <div class="activity-item">
+                                    <i class="fas fa-info-circle"></i>
+                                    <div class="activity-content">
+                                        <p>No recent activity. Book your first parking slot!</p>
+                                        <small>Login to see your history</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="quick-actions">
+                            <h4>Quick Actions</h4>
+                            <div class="action-buttons">
+                                <button class="btn btn-outline" id="quick-book-btn">
+                                    <i class="fas fa-calendar-plus"></i> New Booking
+                                </button>
+                                <button class="btn btn-outline" id="extend-booking-btn">
+                                    <i class="fas fa-clock"></i> Extend Booking
+                                </button>
+                                <button class="btn btn-outline" id="view-receipts-btn">
+                                    <i class="fas fa-receipt"></i> View Receipts
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Bookings Panel -->
+                    <div class="dashboard-panel" id="bookings-panel">
+                        <div class="panel-header">
+                            <h3>My Bookings</h3>
+                            <div class="filter-actions">
+                                <select id="booking-filter">
+                                    <option value="all">All Bookings</option>
+                                    <option value="active">Active</option>
+                                    <option value="upcoming">Upcoming</option>
+                                    <option value="completed">Completed</option>
+                                    <option value="cancelled">Cancelled</option>
+                                </select>
+                                <button class="btn btn-primary btn-sm" id="new-booking-btn">
+                                    <i class="fas fa-plus"></i> New Booking
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="bookings-table-container">
+                            <table class="bookings-table">
+                                <thead>
+                                    <tr>
+                                        <th>Slot</th>
+                                        <th>Vehicle</th>
+                                        <th>Date & Time</th>
+                                        <th>Duration</th>
+                                        <th>Amount</th>
+                                        <th>Status</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="bookings-table-body">
+                                    <tr>
+                                        <td colspan="7" class="no-data">
+                                            No bookings found. <a href="#parking" class="text-link">Book your first slot</a>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    
+                    <!-- Payments Panel -->
+                    <div class="dashboard-panel" id="payments-panel">
+                        <div class="panel-header">
+                            <h3>Payment History</h3>
+                            <div class="filter-actions">
+                                <select id="payment-filter">
+                                    <option value="all">All Payments</option>
+                                    <option value="completed">Completed</option>
+                                    <option value="pending">Pending</option>
+                                    <option value="failed">Failed</option>
+                                    <option value="refunded">Refunded</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="payments-table-container">
+                            <table class="payments-table">
+                                <thead>
+                                    <tr>
+                                        <th>Date</th>
+                                        <th>Transaction ID</th>
+                                        <th>Description</th>
+                                        <th>Amount</th>
+                                        <th>Method</th>
+                                        <th>Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="payments-table-body">
+                                    <tr>
+                                        <td colspan="6" class="no-data">
+                                            No payment history available.
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        
+                        <div class="payment-summary">
+                            <div class="summary-item">
+                                <span>Total Paid:</span>
+                                <span id="total-paid-amount">$0.00</span>
+                            </div>
+                            <div class="summary-item">
+                                <span>Pending Payments:</span>
+                                <span id="pending-amount">$0.00</span>
+                            </div>
+                            <div class="summary-item">
+                                <span>Refunds:</span>
+                                <span id="refund-amount">$0.00</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Settings Panel -->
+                    <div class="dashboard-panel" id="settings-panel">
+                        <div class="panel-header">
+                            <h3>Account Settings</h3>
+                        </div>
+                        
+                        <form class="settings-form" id="settings-form">
+                            <div class="form-group">
+                                <label for="profile-name">Full Name</label>
+                                <input type="text" id="profile-name" placeholder="Enter your full name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="profile-email">Email Address</label>
+                                <input type="email" id="profile-email" placeholder="Enter your email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="profile-phone">Phone Number</label>
+                                <input type="tel" id="profile-phone" placeholder="Enter your phone number">
+                            </div>
+                            <div class="form-group">
+                                <label for="default-vehicle">Default Vehicle</label>
+                                <input type="text" id="default-vehicle" placeholder="e.g., Toyota Camry, ABC-1234">
+                            </div>
+                            <div class="form-group">
+                                <label for="vehicle-type">Vehicle Type</label>
+                                <select id="vehicle-type">
+                                    <option value="car">Car</option>
+                                    <option value="suv">SUV</option>
+                                    <option value="truck">Truck</option>
+                                    <option value="van">Van</option>
+                                    <option value="motorcycle">Motorcycle</option>
+                                    <option value="electric">Electric Vehicle</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Notification Preferences</label>
+                                <div class="checkbox-group">
+                                    <label>
+                                        <input type="checkbox" name="notifications" value="email" checked>
+                                        Email notifications
+                                    </label>
+                                    <label>
+                                        <input type="checkbox" name="notifications" value="sms" checked>
+                                        SMS alerts
+                                    </label>
+                                    <label>
+                                        <input type="checkbox" name="notifications" value="push">
+                                        Push notifications
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="current-password">Current Password</label>
+                                <input type="password" id="current-password" placeholder="Enter current password">
+                            </div>
+                            <div class="form-group">
+                                <label for="new-password">New Password</label>
+                                <input type="password" id="new-password" placeholder="Enter new password">
+                            </div>
+                            <div class="form-group">
+                                <label for="confirm-password">Confirm Password</label>
+                                <input type="password" id="confirm-password" placeholder="Confirm new password">
+                            </div>
+                            <div class="form-actions">
+                                <button type="button" class="btn btn-secondary" id="cancel-settings">Cancel</button>
+                                <button type="submit" class="btn btn-primary" id="save-settings">Save Changes</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Help & Support Section -->
+    <section class="help" id="help">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Help & Support</h2>
+                <p class="section-subtitle">Get assistance with your parking needs</p>
+            </div>
+            
+            <div class="help-container">
+                <!-- FAQ Section -->
+                <div class="help-section">
+                    <h3><i class="fas fa-question-circle"></i> Frequently Asked Questions</h3>
+                    <div class="faq-container">
+                        <div class="faq-item">
+                            <button class="faq-question">
+                                How do I book a parking slot?
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                            <div class="faq-answer">
+                                <p>To book a parking slot, navigate to the "Live Parking" section, select your preferred floor, click on an available slot, fill in your vehicle details, and confirm the booking. You'll receive a confirmation email with your booking details.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <button class="faq-question">
+                                Can I cancel my booking?
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                            <div class="faq-answer">
+                                <p>Yes, you can cancel your booking from the "My Bookings" section in your Dashboard. Cancellations made more than 1 hour before the booking start time are eligible for a full refund. Cancellations within 1 hour incur a 50% cancellation fee.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <button class="faq-question">
+                                What payment methods do you accept?
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                            <div class="faq-answer">
+                                <p>We accept all major credit cards (Visa, MasterCard, American Express), debit cards, digital wallets (Apple Pay, Google Pay), and PayPal. Cash payments are also accepted at the parking entrance.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <button class="faq-question">
+                                Are there special rates for electric vehicles?
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                            <div class="faq-answer">
+                                <p>Yes! Electric vehicles receive a 15% discount on all parking rates. Additionally, we have dedicated EV charging stations on all floors with charging included in the parking fee for the first 2 hours.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <button class="faq-question">
+                                How do I extend my parking time?
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                            <div class="faq-answer">
+                                <p>You can extend your parking time through the mobile app, website dashboard, or by visiting the payment kiosk in the parking area. Extensions are subject to slot availability and must be requested at least 30 minutes before your booking expires.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Contact Support -->
+                <div class="help-section">
+                    <h3><i class="fas fa-headset"></i> Contact Support</h3>
+                    <div class="contact-grid">
+                        <div class="contact-card">
+                            <i class="fas fa-phone"></i>
+                            <h4>Phone Support</h4>
+                            <p>24/7 Customer Service</p>
+                            <p class="contact-info">+91 9575228807</p>
+                            <button class="btn btn-outline call-support-btn">
+                                <i class="fas fa-phone-alt"></i> Call Now
+                            </button>
+                        </div>
+                        
+                        <div class="contact-card">
+                            <i class="fas fa-envelope"></i>
+                            <h4>Email Support</h4>
+                            <p>Response within 2 hours</p>
+                            <p class="contact-info">himanshugoud638@gmail.com</p>
+                            <button class="btn btn-outline email-support-btn">
+                                <i class="fas fa-envelope"></i> Send Email
+                            </button>
+                        </div>
+                        
+                       <div class="contact-card">
+    <i class="fas fa-comments"></i>
+    <h4>Live Chat</h4>
+    <p>Available 9AM-9PM EST</p>
+    <p class="contact-info">Instant assistance</p>
+    <button class="btn btn-outline chat-support-btn">
+        <i class="fas fa-comment"></i> Start Chat
+    </button>
+</div>
+                        
+                        <div class="contact-card">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <h4>Visit Us</h4>
+                            <p>Office Hours: 8AM-8PM</p>
+                            <p class="contact-info">Ashok Colony Parking St, Gwl</p>
+                            <button class="btn btn-outline directions-btn">
+                                <i class="fas fa-directions"></i> Get Directions
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Emergency Section -->
+                <div class="emergency-section">
+                    <div class="emergency-card">
+                        <div class="emergency-icon">
+                            <i class="fas fa-exclamation-triangle"></i>
+                        </div>
+                        <div class="emergency-content">
+                            <h3>Emergency Assistance</h3>
+                            <p>For vehicle lockouts, breakdowns, or medical emergencies in the parking facility</p>
+                            <div class="emergency-contacts">
+                                <div class="emergency-contact">
+                                    <i class="fas fa-phone"></i>
+                                    <div>
+                                        <h4>Emergency Hotline</h4>
+                                        <p class="phone-number">+91 9575228807</p>
+                                    </div>
+                                </div>
+                                <div class="emergency-contact">
+                                    <i class="fas fa-shield-alt"></i>
+                                    <div>
+                                        <h4>Security Office</h4>
+                                        <p class="phone-number">+91 9301750723</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Help Guides -->
+                <div class="help-section">
+                    <h3><i class="fas fa-book"></i> Helpful Guides</h3>
+                    <div class="guides-grid">
+                        <a href="javascript:void(0)" class="guide-card" id="guide-booking">
+                            <i class="fas fa-car"></i>
+                            <h4>How to Book Your First Slot</h4>
+                            <p>Step-by-step guide for new users</p>
+                        </a>
+                        
+                        <a href="javascript:void(0)" class="guide-card" id="guide-payment">
+                            <i class="fas fa-credit-card"></i>
+                            <h4>Payment & Refund Policy</h4>
+                            <p>Complete guide to payments and refunds</p>
+                        </a>
+                        
+                        <a href="javascript:void(0)" class="guide-card" id="guide-mobile">
+                            <i class="fas fa-mobile-alt"></i>
+                            <h4>Mobile App Guide</h4>
+                            <p>Using the SmartPark mobile application</p>
+                        </a>
+                        
+                        <a href="javascript:void(0)" class="guide-card" id="guide-accessibility">
+                            <i class="fas fa-wheelchair"></i>
+                            <h4>Accessibility Guide</h4>
+                            <p>Accessible parking and facilities</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Stats -->
+    <section class="quick-stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-icon">
+                        <i class="fas fa-car"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3 class="stat-number" id="quick-available-slots" data-count="85">0</h3>
+                        <p class="stat-label">Available Slots Now</p>
+                    </div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3 class="stat-number" data-count="2.5">0</h3>
+                        <p class="stat-label">Avg. Search Time</p>
+                    </div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3 class="stat-number" data-count="98">0</h3>
+                        <p class="stat-label">User Satisfaction</p>
+                    </div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-icon">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3 class="stat-number" data-count="42">0</h3>
+                        <p class="stat-label">EV Charging Spots</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Actions -->
+    <section class="quick-actions" id="quick-actions-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Quick Actions</h2>
+                <p class="section-subtitle">Get started in seconds</p>
+            </div>
+            
+            <!-- Horizontal layout for quick actions -->
+            <div class="actions-grid-horizontal">
+                <a href="#parking" class="action-card-horizontal" id="action-find-parking-horizontal">
+                    <div class="action-icon-horizontal">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <div class="action-content-horizontal">
+                        <h3 class="action-title-horizontal">Find Parking</h3>
+                        <p class="action-description-horizontal">Locate available spots near you</p>
+                    </div>
+                    <div class="action-arrow-horizontal">
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+                </a>
+                
+                <a href="javascript:void(0)" class="action-card-horizontal" id="action-book-advance-horizontal">
+                    <div class="action-icon-horizontal">
+                        <i class="fas fa-calendar-check"></i>
+                    </div>
+                    <div class="action-content-horizontal">
+                        <h3 class="action-title-horizontal">Book in Advance</h3>
+                        <p class="action-description-horizontal">Reserve your spot ahead of time</p>
+                    </div>
+                    <div class="action-arrow-horizontal">
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+                </a>
+                
+                <a href="javascript:void(0)" class="action-card-horizontal" id="action-get-app-horizontal">
+                    <div class="action-icon-horizontal">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <div class="action-content-horizontal">
+                        <h3 class="action-title-horizontal">Get the App</h3>
+                        <p class="action-description-horizontal">Download our mobile application</p>
+                    </div>
+                    <div class="action-arrow-horizontal">
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+                </a>
+                
+                <a href="#help" class="action-card-horizontal" id="action-get-help-horizontal">
+                    <div class="action-icon-horizontal">
+                        <i class="fas fa-question-circle"></i>
+                    </div>
+                    <div class="action-content-horizontal">
+                        <h3 class="action-title-horizontal">Get Help</h3>
+                        <p class="action-description-horizontal">View FAQs & contact support</p>
+                    </div>
+                    <div class="action-arrow-horizontal">
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <i class="fas fa-parking"></i>
+                        <h3>Smart<span>Park</span></h3>
+                    </div>
+                    <p class="footer-description">
+                        Intelligent parking solutions for modern urban environments.
+                    </p>
+                    <div class="social-links">
+                        <a href="https://facebook.com" target="_blank" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://twitter.com" target="_blank" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="https://instagram.com" target="_blank" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="https://linkedin.com" target="_blank" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-title">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="#parking">Live Parking</a></li>
+                        <li><a href="#pricing">Pricing</a></li>
+                        <li><a href="#dashboard">Dashboard</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-title">Support</h4>
+                    <ul class="footer-links">
+                        <li><a href="#help">Help Center</a></li>
+                        <li><a href="#help">FAQ</a></li>
+                        <li><a href="#help">Contact Us</a></li>
+                        <li><a href="javascript:void(0)" id="privacy-policy">Privacy Policy</a></li>
+                        <li><a href="javascript:void(0)" id="terms-service">Terms of Service</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-title">Contact Info</h4>
+                    <div class="contact-info">
+                        <p><i class="fas fa-map-marker-alt"></i>02 Ashok Colony Parking St, Gwalior</p>
+                        <p><i class="fas fa-phone"></i>+91 9575228807</p>
+                        <p><i class="fas fa-envelope"></i>himanshugoud638@gmail.com</p>
+                    </div>
+                    <div class="newsletter">
+                        <h5>Stay Updated</h5>
+                        <div class="newsletter-form">
+                            <input type="email" id="newsletter-email" placeholder="Your email">
+                            <button type="button" id="newsletter-submit"><i class="fas fa-paper-plane"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 SmartPark. All rights reserved.</p>
+                <div class="footer-apps">
+                    <a href="javascript:void(0)" class="app-link" id="app-store-link">
+                        <i class="fab fa-apple"></i> App Store
+                    </a>
+                    <a href="javascript:void(0)" class="app-link" id="play-store-link">
+                        <i class="fab fa-google-play"></i> Google Play
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Login Modal -->
+    <div class="modal" id="login-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Welcome Back</h2>
+                <button class="modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form class="auth-form" id="login-form">
+                    <div class="form-group">
+                        <label for="login-email">Email</label>
+                        <input type="email" id="login-email" name="email" placeholder="Enter your email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="login-password">Password</label>
+                        <input type="password" id="login-password" name="password" placeholder="Enter your password" required>
+                        <div class="password-toggle">
+                            <i class="fas fa-eye" id="toggle-login-password"></i>
+                        </div>
+                    </div>
+                    <div class="form-options">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="remember-me">
+                            <span>Remember me</span>
+                        </label>
+                        <a href="javascript:void(0)" class="forgot-password" id="forgot-password-link">Forgot password?</a>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block" id="login-submit">
+                        <span class="btn-text">Sign In</span>
+                        <span class="btn-loader" style="display: none;">
+                            <i class="fas fa-spinner fa-spin"></i> Signing in...
+                        </span>
+                    </button>
+                </form>
+                <div class="auth-divider">
+                    <span>Or continue with</span>
+                </div>
+                <div class="social-auth">
+                    <button class="btn btn-outline btn-block" id="google-auth">
+                        <i class="fab fa-google"></i> Google
+                    </button>
+                    <button class="btn btn-outline btn-block" id="facebook-auth">
+                        <i class="fab fa-facebook"></i> Facebook
+                    </button>
+                </div>
+                <p class="auth-switch">
+                    Don't have an account? <a href="javascript:void(0)" id="switch-to-signup">Sign up</a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Signup Modal -->
+    <div class="modal" id="signup-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Create Account</h2>
+                <button class="modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form class="auth-form" id="signup-form">
+                    <div class="form-group">
+                        <label for="signup-name">Full Name</label>
+                        <input type="text" id="signup-name" name="name" placeholder="Enter your full name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="signup-email">Email</label>
+                        <input type="email" id="signup-email" name="email" placeholder="Enter your email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="signup-phone">Phone Number</label>
+                        <input type="tel" id="signup-phone" name="phone" placeholder="Enter your phone number">
+                    </div>
+                    <div class="form-group">
+                        <label for="signup-password">Password</label>
+                        <input type="password" id="signup-password" name="password" placeholder="Create a password" required>
+                        <div class="password-toggle">
+                            <i class="fas fa-eye" id="toggle-signup-password"></i>
+                        </div>
+                        <div class="password-strength">
+                            <div class="strength-meter">
+                                <div class="strength-fill"></div>
+                            </div>
+                            <span class="strength-text">Password strength: <span id="strength-value">Weak</span></span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="signup-confirm-password">Confirm Password</label>
+                        <input type="password" id="signup-confirm-password" name="confirm-password" placeholder="Confirm your password" required>
+                        <div class="password-toggle">
+                            <i class="fas fa-eye" id="toggle-confirm-password"></i>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="terms-agree" required>
+                            <span>I agree to the <a href="javascript:void(0)" id="terms-link">Terms of Service</a> and <a href="javascript:void(0)" id="privacy-link">Privacy Policy</a></span>
+                        </label>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block" id="signup-submit">
+                        <span class="btn-text">Create Account</span>
+                        <span class="btn-loader" style="display: none;">
+                            <i class="fas fa-spinner fa-spin"></i> Creating account...
+                        </span>
+                    </button>
+                </form>
+                <p class="auth-switch">
+                    Already have an account? <a href="javascript:void(0)" id="switch-to-login">Sign in</a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Booking Modal -->
+    <div class="modal" id="booking-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Book Your Spot</h2>
+                <button class="modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="booking-form" id="booking-form">
+                    <div class="booking-steps">
+                        <div class="step active" data-step="1">1. Slot Details</div>
+                        <div class="step" data-step="2">2. Vehicle Info</div>
+                        <div class="step" data-step="3">3. Payment</div>
+                    </div>
+                    
+                    <!-- Step 1: Slot Details -->
+                    <div class="booking-step active" id="step-1">
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="booking-slot">
+                                    <i class="fas fa-map-marker-alt"></i> Selected Slot
+                                </label>
+                                <div class="form-field-display">
+                                    <i class="fas fa-car"></i>
+                                    <input type="text" id="booking-slot" value="No slot selected" readonly>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="booking-floor">
+                                    <i class="fas fa-layer-group"></i> Floor
+                                </label>
+                                <div class="form-field-display">
+                                    <i class="fas fa-building"></i>
+                                    <input type="text" id="booking-floor" value="Ground Floor" readonly>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="booking-duration">
+                                    <i class="fas fa-clock"></i> Duration
+                                </label>
+                                <div class="form-field-display">
+                                    <i class="fas fa-hourglass-half"></i>
+                                    <select id="booking-duration">
+                                        <option value="1">1 hour - $2.50</option>
+                                        <option value="2">2 hours - $5.00</option>
+                                        <option value="3">3 hours - $7.50</option>
+                                        <option value="4">4 hours - $10.00</option>
+                                        <option value="8">8 hours - $18.00</option>
+                                        <option value="24">24 hours - $35.00</option>
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <!-- CHANGED: Date field now shows current date and is read-only -->
+                            <div class="form-group">
+                                <label for="booking-date">
+                                    <i class="fas fa-calendar"></i> Date
+                                </label>
+                                <div class="form-field-display">
+                                    <i class="fas fa-calendar-day"></i>
+                                    <input type="text" id="booking-date" value="23-01-2026" readonly>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="booking-time">
+                                    <i class="fas fa-clock"></i> Start Time
+                                </label>
+                                <div class="form-field-display">
+                                    <i class="fas fa-clock"></i>
+                                    <input type="time" id="booking-time" required>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="step-actions">
+                            <button type="button" class="btn btn-outline" id="cancel-booking">
+                                <i class="fas fa-times"></i> Cancel
+                            </button>
+                            <button type="button" class="btn btn-primary" id="next-to-step-2">
+                                <i class="fas fa-arrow-right"></i> Next
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Step 2: Vehicle Info -->
+                    <div class="booking-step" id="step-2">
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="vehicle-type-select">
+                                    <i class="fas fa-car"></i> Vehicle Type
+                                </label>
+                                <div class="form-field-display">
+                                    <i class="fas fa-car-side"></i>
+                                    <select id="vehicle-type-select">
+                                        <option value="car">Car</option>
+                                        <option value="suv">SUV</option>
+                                        <option value="truck">Truck</option>
+                                        <option value="van">Van</option>
+                                        <option value="motorcycle">Motorcycle</option>
+                                        <option value="electric">Electric Vehicle</option>
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="vehicle-number">
+                                    <i class="fas fa-hashtag"></i> Vehicle Number
+                                </label>
+                                <div class="form-field-display">
+                                    <i class="fas fa-id-card"></i>
+                                    <input type="text" id="vehicle-number" placeholder="ABC-1234" required>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="vehicle-color">
+                                    <i class="fas fa-palette"></i> Vehicle Color
+                                </label>
+                                <div class="form-field-display">
+                                    <i class="fas fa-fill-drip"></i>
+                                    <input type="text" id="vehicle-color" placeholder="e.g., Red, Blue">
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="vehicle-model">
+                                    <i class="fas fa-car-alt"></i> Vehicle Model
+                                </label>
+                                <div class="form-field-display">
+                                    <i class="fas fa-cog"></i>
+                                    <input type="text" id="vehicle-model" placeholder="e.g., Toyota Camry">
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-checkbox">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="save-vehicle">
+                                <i class="fas fa-save"></i>
+                                <span>Save this vehicle for future bookings</span>
+                            </label>
+                        </div>
+                        
+                        <div class="step-actions">
+                            <button type="button" class="btn btn-outline" id="back-to-step-1">
+                                <i class="fas fa-arrow-left"></i> Back
+                            </button>
+                            <button type="button" class="btn btn-primary" id="next-to-step-3">
+                                <i class="fas fa-arrow-right"></i> Next
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Step 3: Payment -->
+                    <div class="booking-step" id="step-3">
+                        <div class="booking-summary-section">
+                            <h4><i class="fas fa-receipt"></i> Booking Summary</h4>
+                            <div class="summary-details">
+                                <div class="summary-item">
+                                    <span>Slot <span id="summary-slot">A-01</span></span>
+                                    <span id="summary-price">$2.50/hr</span>
+                                </div>
+                                <div class="summary-item">
+                                    <span><span id="summary-duration">1</span> hour(s)</span>
+                                    <span id="summary-subtotal">$2.50</span>
+                                </div>
+                                <!-- ADDED: Date display in summary -->
+                                <div class="summary-item">
+                                    <span>Date</span>
+                                    <span id="summary-date">23-01-2026</span>
+                                </div>
+                                <div class="summary-item">
+                                    <span>Service fee</span>
+                                    <span>$0.50</span>
+                                </div>
+                                <div class="summary-item">
+                                    <span>Tax (10%)</span>
+                                    <span id="summary-tax">$0.30</span>
+                                </div>
+                                <div class="summary-total">
+                                    <span>Total</span>
+                                    <span class="total-price" id="summary-total">$3.30</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="payment-section">
+                            <h4><i class="fas fa-credit-card"></i> Payment Method</h4>
+                            <div class="payment-options-grid">
+                                <label class="payment-option">
+                                    <input type="radio" name="payment-method" value="card" checked>
+                                    <div class="payment-content">
+                                        <i class="fas fa-credit-card"></i>
+                                        <span>Credit/Debit Card</span>
+                                    </div>
+                                </label>
+                                <label class="payment-option">
+                                    <input type="radio" name="payment-method" value="paypal">
+                                    <div class="payment-content">
+                                        <i class="fab fa-paypal"></i>
+                                        <span>PayPal</span>
+                                    </div>
+                                </label>
+                                <label class="payment-option">
+                                    <input type="radio" name="payment-method" value="googlepay">
+                                    <div class="payment-content">
+                                        <i class="fab fa-google-pay"></i>
+                                        <span>Google Pay</span>
+                                    </div>
+                                </label>
+                                <label class="payment-option">
+                                    <input type="radio" name="payment-method" value="applepay">
+                                    <div class="payment-content">
+                                        <i class="fab fa-apple-pay"></i>
+                                        <span>Apple Pay</span>
+                                    </div>
+                                </label>
+                            </div>
+                            
+                            <div class="card-payment-form" id="card-payment-form" style="display: none;">
+                                <div class="form-group">
+                                    <label for="card-number">Card Number</label>
+                                    <input type="text" id="card-number" placeholder="1234 5678 9012 3456" maxlength="19" required>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="card-expiry">Expiry Date</label>
+                                        <input type="text" id="card-expiry" placeholder="MM/YY" maxlength="5" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="card-cvv">CVV</label>
+                                        <input type="password" id="card-cvv" placeholder="123" maxlength="3" required>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="card-name">Name on Card</label>
+                                    <input type="text" id="card-name" placeholder="John Doe" required>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="step-actions">
+                            <button type="button" class="btn btn-outline" id="back-to-step-2">
+                                <i class="fas fa-arrow-left"></i> Back
+                            </button>
+                            <button type="button" class="btn btn-primary" id="confirm-payment">
+                                <i class="fas fa-lock"></i> Confirm & Pay
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Forgot Password Modal -->
+    <div class="modal" id="forgot-password-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Reset Password</h2>
+                <button class="modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form class="auth-form" id="forgot-password-form">
+                    <p>Enter your email address and we'll send you instructions to reset your password.</p>
+                    <div class="form-group">
+                        <label for="reset-email">Email</label>
+                        <input type="email" id="reset-email" placeholder="Enter your email" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">Send Reset Link</button>
+                </form>
+                <p class="auth-switch">
+                    Remember your password? <a href="javascript:void(0)" id="back-to-login">Sign in</a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Payment Success Modal -->
+    <div class="modal" id="payment-success-modal">
+        <div class="modal-content success-modal">
+            <div class="modal-header">
+                <h2>Payment Successful!</h2>
+                <button class="modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="success-icon">
+                    <i class="fas fa-check-circle"></i>
+                </div>
+                <h3>Booking Confirmed</h3>
+                <p>Your parking slot has been successfully booked.</p>
+                <div class="booking-details">
+                    <p><strong>Booking ID:</strong> <span id="success-booking-id">SP-2023-001</span></p>
+                    <p><strong>Slot:</strong> <span id="success-slot">A-01</span></p>
+                    <p><strong>Date & Time:</strong> <span id="success-date-time">Today, 10:30 AM</span></p>
+                    <p><strong>Duration:</strong> <span id="success-duration">2 hours</span></p>
+                    <p><strong>Amount Paid:</strong> <span id="success-amount">$5.00</span></p>
+                </div>
+                <div class="success-actions">
+                    <button class="btn btn-outline" id="download-receipt">
+                        <i class="fas fa-download"></i> Download Receipt
+                    </button>
+                    <button class="btn btn-primary" id="view-booking">
+                        <i class="fas fa-eye"></i> View in Dashboard
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- App Download Modal -->
+    <div class="modal" id="app-download-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2><i class="fas fa-mobile-alt"></i> Download SmartPark App</h2>
+                <button class="modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="app-download-content">
+                    <div class="app-features">
+                        <div class="feature-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <h4>Real-Time Parking</h4>
+                            <p>Find available spots instantly</p>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-bolt"></i>
+                            <h4>Quick Booking</h4>
+                            <p>Reserve in 3 taps or less</p>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-bell"></i>
+                            <h4>Smart Alerts</h4>
+                            <p>Get notifications for expiring time</p>
+                        </div>
+                    </div>
+                    
+                    <div class="qr-codes">
+                        <div class="qr-section">
+                            <div class="qr-code">
+                                <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://apps.apple.com/app/smartpark" alt="App Store QR">
+                            </div>
+                            <h4>iOS App</h4>
+                            <p>For iPhone & iPad</p>
+                            <button class="btn btn-outline download-btn" id="ios-download">
+                                <i class="fab fa-apple"></i> App Store
+                            </button>
+                        </div>
+                        <div class="qr-section">
+                            <div class="qr-code">
+                                <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://play.google.com/store/apps/details?id=com.smartpark" alt="Play Store QR">
+                            </div>
+                            <h4>Android App</h4>
+                            <p>For Android devices</p>
+                            <button class="btn btn-outline download-btn" id="android-download">
+                                <i class="fab fa-google-play"></i> Google Play
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="app-links">
+                        <h4>Direct Download Links</h4>
+                        <div class="link-buttons">
+                            <a href="https://apps.apple.com/app/smartpark" target="_blank" class="btn btn-outline">
+                                <i class="fab fa-apple"></i> iOS Download
+                            </a>
+                            <a href="https://play.google.com/store/apps/details?id=com.smartpark" target="_blank" class="btn btn-outline">
+                                <i class="fab fa-google-play"></i> Android Download
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Demo Video Modal -->
+    <div class="modal" id="demo-video-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2><i class="fas fa-play-circle"></i> SmartPark Demo</h2>
+                <button class="modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="demo-content">
+                    <!-- VIDEO IMPLEMENTATION HERE -->
+                    <div class="video-container">
+                        <video controls style="width: 100%; border-radius: 8px; max-height: 400px;">
+                            <source src="demo-video.mp4/Smartpark.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                    
+                    <div class="demo-steps">
+                        <h4>What You'll Learn:</h4>
+                        <ol>
+                            <li><strong>Finding Parking:</strong> How to locate available spots</li>
+                            <li><strong>Booking Process:</strong> Step-by-step booking guide</li>
+                            <li><strong>Payment:</strong> Secure payment methods</li>
+                            <li><strong>Extensions:</strong> How to extend your parking</li>
+                            <li><strong>Receipts:</strong> Accessing and downloading receipts</li>
+                        </ol>
+                    </div>
+                    <div class="demo-actions">
+                        <button class="btn btn-outline" id="download-demo-pdf">
+                            <i class="fas fa-download"></i> Download Guide (PDF)
+                        </button>
+                        <button class="btn btn-primary" id="try-live-demo">
+                            <i class="fas fa-play"></i> Try Live Demo
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Guide Modals -->
+    <div class="modal" id="guide-booking-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2><i class="fas fa-car"></i> How to Book Your First Slot</h2>
+                <button class="modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="guide-content">
+                    <div class="guide-step">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h4>Go to Live Parking</h4>
+                            <p>Navigate to the "Live Parking" section or click "Find Parking" from the home page.</p>
+                        </div>
+                    </div>
+                    <div class="guide-step">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h4>Select Floor</h4>
+                            <p>Choose your preferred floor (Ground, First, or Second) using the floor tabs.</p>
+                        </div>
+                    </div>
+                    <div class="guide-step">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h4>Choose a Slot</h4>
+                            <p>Click on an available (green) parking slot. Selected slot will turn blue.</p>
+                        </div>
+                    </div>
+                    <div class="guide-step">
+                        <div class="step-number">4</div>
+                        <div class="step-content">
+                            <h4>Enter Details</h4>
+                            <p>Fill in your vehicle details, date, time, and duration in the booking form.</p>
+                        </div>
+                    </div>
+                    <div class="guide-step">
+                        <div class="step-number">5</div>
+                        <div class="step-content">
+                            <h4>Make Payment</h4>
+                            <p>Choose payment method and complete the secure payment process.</p>
+                        </div>
+                    </div>
+                    <div class="guide-step">
+                        <div class="step-number">6</div>
+                        <div class="step-content">
+                            <h4>Confirmation</h4>
+                            <p>Receive booking confirmation via email and in your dashboard.</p>
+                        </div>
+                    </div>
+                    <div class="guide-tips">
+                        <h4>Pro Tips:</h4>
+                        <ul>
+                            <li>Book in advance for guaranteed availability</li>
+                            <li>Use the mobile app for faster booking on the go</li>
+                            <li>Save your vehicle details for future bookings</li>
+                            <li>Check for EV charging slots if you have an electric vehicle</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="guide-payment-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2><i class="fas fa-credit-card"></i> Payment & Refund Policy</h2>
+                <button class="modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="guide-content">
+                    <div class="payment-section">
+                        <h4>Accepted Payment Methods</h4>
+                        <div class="payment-methods-list">
+                            <div class="payment-method">
+                                <i class="fas fa-credit-card"></i>
+                                <span>Credit/Debit Cards</span>
+                                <p>Visa, MasterCard, American Express</p>
+                            </div>
+                            <div class="payment-method">
+                                <i class="fab fa-paypal"></i>
+                                <span>PayPal</span>
+                                <p>Secure online payments</p>
+                            </div>
+                            <div class="payment-method">
+                                <i class="fas fa-wallet"></i>
+                                <span>Digital Wallets</span>
+                                <p>Google Pay, Apple Pay</p>
+                            </div>
+                            <div class="payment-method">
+                                <i class="fas fa-money-bill-wave"></i>
+                                <span>Cash</span>
+                                <p>At parking entrance</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="refund-section">
+                        <h4>Refund Policy</h4>
+                        <table class="refund-table">
+                            <thead>
+                                <tr>
+                                    <th>Cancellation Time</th>
+                                    <th>Refund Amount</th>
+                                    <th>Processing Time</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>More than 24 hours before</td>
+                                    <td>100% refund</td>
+                                    <td>3-5 business days</td>
+                                </tr>
+                                <tr>
+                                    <td>6-24 hours before</td>
+                                    <td>75% refund</td>
+                                    <td>3-5 business days</td>
+                                </tr>
+                                <tr>
+                                    <td>1-6 hours before</td>
+                                    <td>50% refund</td>
+                                    <td>3-5 business days</td>
+                                </tr>
+                                <tr>
+                                    <td>Less than 1 hour</td>
+                                    <td>No refund</td>
+                                    <td>-</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                    <div class="security-section">
+                        <h4><i class="fas fa-shield-alt"></i> Payment Security</h4>
+                        <p>All payments are encrypted using 256-bit SSL encryption. We never store your credit card details on our servers. Payments are processed by certified PCI-DSS compliant payment processors.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="guide-mobile-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2><i class="fas fa-mobile-alt"></i> Mobile App Guide</h2>
+                <button class="modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="guide-content">
+                    <div class="app-screenshots">
+                        <div class="screenshot">
+                            <div class="phone-frame">
+                                <div class="screen" style="background: linear-gradient(135deg, #4361ee, #3a0ca3);">
+                                    <div class="app-screen">
+                                        <div class="app-header">
+                                            <i class="fas fa-parking"></i>
+                                            <span>SmartPark</span>
+                                        </div>
+                                        <div class="app-content">
+                                            <div class="search-bar">
+                                                <i class="fas fa-search"></i>
+                                                <span>Find parking...</span>
+                                            </div>
+                                            <div class="quick-actions">
+                                                <button class="app-btn">Book Now</button>
+                                                <button class="app-btn">My Bookings</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <p>Home Screen</p>
+                        </div>
+                    </div>
+                    
+                    <div class="app-features-guide">
+                        <h4>Key Features:</h4>
+                        <div class="feature-guide">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <h5>Live Parking Map</h5>
+                                <p>Real-time availability with GPS navigation to your spot</p>
+                            </div>
+                        </div>
+                        <div class="feature-guide">
+                            <i class="fas fa-bell"></i>
+                            <div>
+                                <h5>Smart Notifications</h5>
+                                <p>Get alerts for expiring time, booking confirmations, and special offers</p>
+                            </div>
+                        </div>
+                        <div class="feature-guide">
+                            <i class="fas fa-qrcode"></i>
+                            <div>
+                                <h5>QR Code Entry</h5>
+                                <p>Use QR code for contactless entry and exit</p>
+                            </div>
+                        </div>
+                        <div class="feature-guide">
+                            <i class="fas fa-history"></i>
+                            <div>
+                                <h5>Parking History</h5>
+                                <p>Track all your parking sessions and expenses</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="app-tips">
+                        <h4>Getting Started:</h4>
+                        <ol>
+                            <li>Download the app from App Store or Google Play</li>
+                            <li>Create your account or login</li>
+                            <li>Allow location access for better parking suggestions</li>
+                            <li>Add your vehicle details</li>
+                            <li>Enable notifications for important alerts</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="guide-accessibility-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2><i class="fas fa-wheelchair"></i> Accessibility Guide</h2>
+                <button class="modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="guide-content">
+                    <div class="accessibility-features">
+                        <h4>Accessibility Features</h4>
+                        <div class="feature-grid">
+                            <div class="feature-item">
+                                <i class="fas fa-wheelchair"></i>
+                                <h5>Accessible Parking</h5>
+                                <p>Dedicated handicap spots on every floor, close to elevators</p>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-elevator"></i>
+                                <h5>Elevator Access</h5>
+                                <p>Elevators with braille and audio announcements</p>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-assistive-listening-systems"></i>
+                                <h5>Hearing Assistance</h5>
+                                <p>Induction loops at payment kiosks and help points</p>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-blind"></i>
+                                <h5>Visual Guidance</h5>
+                                <p>Tactile paths and high-contrast signage</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="accessibility-map">
+                        <h4>Accessible Route Map</h4>
+                        <div class="map-guide">
+                            <div class="map-point">
+                                <div class="point-number">1</div>
+                                <div class="point-info">
+                                    <h5>Main Entrance</h5>
+                                    <p>Automatic doors with wheelchair access</p>
+                                </div>
+                            </div>
+                            <div class="map-point">
+                                <div class="point-number">2</div>
+                                <div class="point-info">
+                                    <h5>Elevator Lobby</h5>
+                                    <p>Located 50ft from entrance, right side</p>
+                                </div>
+                            </div>
+                            <div class="map-point">
+                                <div class="point-number">3</div>
+                                <div class="point-info">
+                                    <h5>Accessible Spots</h5>
+                                    <p>Ground Floor: A01-A10, First Floor: B01-B10</p>
+                                </div>
+                            </div>
+                            <div class="map-point">
+                                <div class="point-number">4</div>
+                                <div class="point-info">
+                                    <h5>Help Points</h5>
+                                    <p>Emergency call buttons at every elevator</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Privacy Policy Modal -->
+    <div class="modal" id="privacy-policy-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2><i class="fas fa-shield-alt"></i> Privacy Policy</h2>
+                <button class="modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="policy-content">
+                    <div class="policy-section">
+                        <h4>1. Information We Collect</h4>
+                        <p>We collect information you provide directly to us, such as when you create an account, make a booking, or contact customer support. This includes:</p>
+                        <ul>
+                            <li>Name, email address, and phone number</li>
+                            <li>Vehicle information (license plate, make, model)</li>
+                            <li>Payment information (processed securely by our payment partners)</li>
+                            <li>Parking history and preferences</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="policy-section">
+                        <h4>2. How We Use Your Information</h4>
+                        <p>We use the information we collect to:</p>
+                        <ul>
+                            <li>Provide, maintain, and improve our services</li>
+                            <li>Process transactions and send related information</li>
+                            <li>Send technical notices, updates, and support messages</li>
+                            <li>Respond to your comments and questions</li>
+                            <li>Detect, investigate, and prevent fraudulent transactions</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="policy-section">
+                        <h4>3. Information Sharing</h4>
+                        <p>We do not sell your personal information. We may share information with:</p>
+                        <ul>
+                            <li>Service providers who perform services on our behalf</li>
+                            <li>Law enforcement or government agencies when required by law</li>
+                            <li>Other users (only with your consent, such as for shared parking)</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="policy-section">
+                        <h4>4. Data Security</h4>
+                        <p>We implement appropriate technical and organizational measures to protect your personal information against unauthorized access, alteration, disclosure, or destruction.</p>
+                    </div>
+                    
+                    <div class="policy-section">
+                        <h4>5. Your Rights</h4>
+                        <p>You have the right to:</p>
+                        <ul>
+                            <li>Access your personal information</li>
+                            <li>Correct inaccurate data</li>
+                            <li>Request deletion of your data</li>
+                            <li>Opt-out of marketing communications</li>
+                            <li>Data portability</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="policy-contact">
+                        <h4>Contact Us</h4>
+                        <p>For privacy-related questions or requests:</p>
+                        <p>Email: himanshugoud638@gmail.com</p>
+                        <p>Phone: +91 9575228807 (Privacy Department)</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Terms of Service Modal -->
+    <div class="modal" id="terms-service-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2><i class="fas fa-file-contract"></i> Terms of Service</h2>
+                <button class="modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="terms-content">
+                    <div class="terms-section">
+                        <h4>1. Acceptance of Terms</h4>
+                        <p>By accessing or using the SmartPark services, you agree to be bound by these Terms of Service. If you do not agree to these terms, please do not use our services.</p>
+                    </div>
+                    
+                    <div class="terms-section">
+                        <h4>2. Service Description</h4>
+                        <p>SmartPark provides parking management services including but not limited to:</p>
+                        <ul>
+                            <li>Real-time parking availability information</li>
+                            <li>Online booking and reservation services</li>
+                            <li>Payment processing for parking fees</li>
+                            <li>Parking guidance and management</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="terms-section">
+                        <h4>3. User Accounts</h4>
+                        <p>To use certain features, you must register for an account. You agree to:</p>
+                        <ul>
+                            <li>Provide accurate and complete information</li>
+                            <li>Maintain the security of your password</li>
+                            <li>Accept responsibility for all activities under your account</li>
+                            <li>Notify us immediately of any unauthorized use</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="terms-section">
+                        <h4>4. Booking and Payment</h4>
+                        <p>All bookings are subject to availability. Payment must be made at the time of booking unless otherwise specified. We accept various payment methods as indicated during checkout.</p>
+                    </div>
+                    
+                    <div class="terms-section">
+                        <h4>5. Cancellation and Refunds</h4>
+                        <p>Cancellation policies vary by parking location and booking type. Please review the specific cancellation policy before booking. Refunds, when applicable, will be processed within 5-10 business days.</p>
+                    </div>
+                    
+                    <div class="terms-section">
+                        <h4>6. Limitations of Liability</h4>
+                        <p>SmartPark is not liable for:</p>
+                        <ul>
+                            <li>Vehicle damage, theft, or loss while parked</li>
+                            <li>Traffic delays or inability to access parking</li>
+                            <li>Technical issues preventing booking or payment</li>
+                            <li>Force majeure events</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="terms-section">
+                        <h4>7. Changes to Terms</h4>
+                        <p>We reserve the right to modify these terms at any time. Continued use of our services after changes constitutes acceptance of the modified terms.</p>
+                    </div>
+                    
+                    <div class="terms-section">
+                        <h4>8. Governing Law</h4>
+                        <p>These terms are governed by the laws of India. Any disputes shall be resolved in the courts of Gwalior.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast">
+        <div class="toast-content">
+            <i class="fas fa-check-circle toast-icon"></i>
+            <span class="toast-message">Operation completed successfully!</span>
+        </div>
+        <button class="toast-close">&times;</button>
+    </div>
+
+    <!-- Loading Overlay -->
+    <div class="loading-overlay" id="loading-overlay">
+        <div class="loading-spinner">
+            <i class="fas fa-spinner fa-spin"></i>
+            <span>Loading...</span>
+        </div>
+    </div>
+
+    <!-- Inline CSS for horizontal quick actions layout -->
+    <style>
+        /* Horizontal Quick Actions Styles */
+        #quick-actions-section {
+            padding: 4rem 0;
+            background: white;
+        }
+        
+        .actions-grid-horizontal {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            justify-content: center;
+        }
+        
+        .action-card-horizontal {
+            flex: 1;
+            min-width: 250px;
+            max-width: 300px;
+            background: var(--gray-50);
+            border-radius: var(--radius-lg);
+            padding: 2rem;
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition-slow);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            border: 1px solid var(--gray-200);
+        }
+        
+        .action-card-horizontal::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gradient-primary);
+            transform: translateX(-100%);
+            transition: transform 0.3s ease;
+            z-index: 1;
+        }
+        
+        .action-card-horizontal:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--primary);
+        }
+        
+        .action-card-horizontal:hover::before {
+            transform: translateX(0);
+        }
+        
+        .action-icon-horizontal {
+            width: 4rem;
+            height: 4rem;
+            background: var(--gradient-primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+        
+        .action-content-horizontal {
+            flex: 1;
+        }
+        
+        .action-title-horizontal {
+            font-size: 1.125rem;
+            margin: 0 0 0.5rem 0;
+            color: var(--gray-900);
+        }
+        
+        .action-description-horizontal {
+            color: var(--gray-600);
+            margin: 0;
+            font-size: 0.875rem;
+            line-height: 1.4;
+        }
+        
+        .action-arrow-horizontal {
+            color: var(--primary);
+            font-size: 1rem;
+            transition: transform 0.3s ease;
+        }
+        
+        .action-card-horizontal:hover .action-arrow-horizontal {
+            transform: translateX(4px);
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 1200px) {
+            .actions-grid-horizontal {
+                gap: 1rem;
+            }
+            
+            .action-card-horizontal {
+                min-width: 220px;
+                padding: 1.5rem;
+            }
+        }
+        
+        @media (max-width: 992px) {
+            .actions-grid-horizontal {
+                flex-wrap: wrap;
+                justify-content: space-between;
+            }
+            
+            .action-card-horizontal {
+                flex: 0 0 calc(50% - 1rem);
+                min-width: 0;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .actions-grid-horizontal {
+                flex-direction: column;
+            }
+            
+            .action-card-horizontal {
+                flex: 1 1 auto;
+                width: 100%;
+                max-width: 100%;
+            }
+        }
+    </style>
+
+   <script src="script.js"></script>
+<script src="imagescript.js"></script>
+<!-- Add this line -->
+<script src="theme-integration.js" defer></script>
+<script src="livechat.js"></script>
+<script src="chat-integration.js"></script>
+<script src="vehicle.js"></script>
+<script src="calling.js"></script>
+
+
+<script>
+    // Call the enhanced features setup after the main script loads
+    document.addEventListener('DOMContentLoaded', function() {
+        // Wait a bit for the main initialization
+        setTimeout(() => {
+            setupEnhancedFeatures();
+            
+            // Setup horizontal quick actions event listeners
+            setupHorizontalQuickActions();
+        }, 100);
+    });
+    
+    // Function to setup horizontal quick actions
+    function setupHorizontalQuickActions() {
+        // Find Parking Horizontal
+        const actionFindParkingHorizontal = document.getElementById('action-find-parking-horizontal');
+        if (actionFindParkingHorizontal) {
+            actionFindParkingHorizontal.addEventListener('click', function(e) {
+                e.preventDefault();
+                scrollToSection('#parking');
+            });
+        }
+        
+        // Book in Advance Horizontal
+        const actionBookAdvanceHorizontal = document.getElementById('action-book-advance-horizontal');
+        if (actionBookAdvanceHorizontal) {
+            actionBookAdvanceHorizontal.addEventListener('click', function(e) {
+                e.preventDefault();
+                if (!appState.isLoggedIn) {
+                    showToast('Please login to book in advance', 'error');
+                    openModal('login-modal');
+                    return;
+                }
+                openModal('guide-booking-modal');
+            });
+        }
+        
+        // Get App Horizontal
+        const actionGetAppHorizontal = document.getElementById('action-get-app-horizontal');
+        if (actionGetAppHorizontal) {
+            actionGetAppHorizontal.addEventListener('click', function(e) {
+                e.preventDefault();
+                openModal('app-download-modal');
+            });
+        }
+        
+        // Get Help Horizontal
+        const actionGetHelpHorizontal = document.getElementById('action-get-help-horizontal');
+        if (actionGetHelpHorizontal) {
+            actionGetHelpHorizontal.addEventListener('click', function(e) {
+                e.preventDefault();
+                scrollToSection('#help');
+            });
+        }
+    }
+</script>
+
+</body>
+</html>
+
