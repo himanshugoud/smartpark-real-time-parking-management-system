@@ -101,6 +101,9 @@ smartpark-real-time-parking-management-system
 ├── livechat.css
 │
 ├── sounds/
+│   ├── notification.mp3
+│   ├── recieve.mp3
+│   └── send.mp3
 │
 ├── screenshots/
 │   ├── Home.png
@@ -109,7 +112,7 @@ smartpark-real-time-parking-management-system
 │   ├── Dashboard.png
 │   └── Quick Action.png
 │
-├── demo-video.mp4
+├── Smartpark.mp4
 │
 └── README.md
 ```
@@ -139,6 +142,14 @@ cd smartpark-real-time-parking-management-system
 Run the project
 
 Open the **index.html** file in your browser.
+
+---
+
+## Demo
+
+A demonstration video of the SmartPark system is included in the repository.
+
+Smartpark.mp4
 
 ---
 
