@@ -792,30 +792,43 @@ class LiveChatSystem {
     }
     
     createAudioElements() {
-        // Use external sound files for better compatibility
-        const soundBasePath = 'sounds/'; // Update this path as needed
-        
-        // Message sent sound
-        this.audioElements.messageSent = new Audio();
-        this.audioElements.messageSent.src = soundBasePath + 'send.mp3';
-        this.audioElements.messageSent.volume = 0.3;
-        this.audioElements.messageSent.preload = 'auto';
-        
-        // Message received sound
-        this.audioElements.messageReceived = new Audio();
-        this.audioElements.messageReceived.src = soundBasePath + 'receive.mp3';
-        this.audioElements.messageReceived.volume = 0.3;
-        this.audioElements.messageReceived.preload = 'auto';
-        
-        // Notification sound
-        this.audioElements.notification = new Audio();
-        this.audioElements.notification.src = soundBasePath + 'notification.mp3';
-        this.audioElements.notification.volume = 0.4;
-        this.audioElements.notification.preload = 'auto';
-        
-        // Preload audio
-        this.setupAudioPreload();
-    }
+    // Use direct GitHub raw URLs for your repository
+    const soundBasePath = 'https://raw.githubusercontent.com/himanshugoud/smartpark-real-time-parking-management-system/main/';
+    
+    // Message sent sound
+    this.audioElements.messageSent = new Audio();
+    this.audioElements.messageSent.src = soundBasePath + 'send.mp3';
+    this.audioElements.messageSent.volume = 0.3;
+    this.audioElements.messageSent.preload = 'auto';
+    
+    // Message received sound
+    this.audioElements.messageReceived = new Audio();
+    this.audioElements.messageReceived.src = soundBasePath + 'receive.mp3';
+    this.audioElements.messageReceived.volume = 0.3;
+    this.audioElements.messageReceived.preload = 'auto';
+    
+    // Notification sound
+    this.audioElements.notification = new Audio();
+    this.audioElements.notification.src = soundBasePath + 'notification.mp3';
+    this.audioElements.notification.volume = 0.4;
+    this.audioElements.notification.preload = 'auto';
+    
+    // Add error handling to verify sounds are loading
+    this.audioElements.messageSent.addEventListener('error', (e) => {
+        console.log('Failed to load send.mp3 - check if file exists at:', soundBasePath + 'send.mp3');
+    });
+    
+    this.audioElements.messageReceived.addEventListener('error', (e) => {
+        console.log('Failed to load receive.mp3 - check if file exists at:', soundBasePath + 'receive.mp3');
+    });
+    
+    this.audioElements.notification.addEventListener('error', (e) => {
+        console.log('Failed to load notification.mp3 - check if file exists at:', soundBasePath + 'notification.mp3');
+    });
+    
+    // Preload audio
+    this.setupAudioPreload();
+}
     
     createSentSound() {
         // Base64 encoded short beep sound
