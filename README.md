@@ -43,6 +43,10 @@ SmartPark is a **web-based smart parking management system** designed to monitor
 
 ![Image Alt](https://github.com/himanshugoud/smartpark-real-time-parking-management-system/blob/main/Dashboard.png?raw=true)
 
+# Quick Action
+
+![Image Alt](https://github.com/himanshugoud/smartpark-real-time-parking-management-system/blob/main/Quick%20Action.png?raw=true)
+
 ---
 
 ## System Architecture
@@ -99,10 +103,11 @@ smartpark-real-time-parking-management-system
 ├── sounds/
 │
 ├── screenshots/
-│   ├── home.png
-│   ├── parking-map.png
-│   ├── booking.png
-│   └── dashboard.png
+│   ├── Home.png
+│   ├── Features.png
+│   ├── Live Parking Status.png
+│   ├── Dashboard.png
+│   └── Quick Action.png
 │
 ├── demo-video.mp4
 │
