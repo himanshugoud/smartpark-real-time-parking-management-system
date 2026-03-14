@@ -142,14 +142,6 @@ Open the **index.html** file in your browser.
 
 ---
 
-## Demo
-
-A demonstration video of the SmartPark system is included in the repository.
-
-demo-video.mp4
-
----
-
 ## Future Improvements
 
 * IoT sensor integration for real parking detection
