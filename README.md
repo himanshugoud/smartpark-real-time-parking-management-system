@@ -73,7 +73,7 @@ Dashboard & Booking History
 
 * HTML5
 * CSS3
-* JavaScript (Vanilla JS)
+* JavaScript 
 
 ### Libraries & Tools
 
@@ -99,6 +99,8 @@ smartpark-real-time-parking-management-system
 ├── imagescript.js
 ├── livechat.js
 ├── livechat.css
+├── calling.js
+├── chat-integration.js
 │
 ├── sounds/
 │   ├── notification.mp3
@@ -158,7 +160,6 @@ Smartpark.mp4
 * IoT sensor integration for real parking detection
 * Database integration (MySQL or Firebase)
 * GPS-based parking search functionality
-* QR code-based parking entry system
 * Mobile application integration
 * AI-based parking prediction system
 
